@@ -1,6 +1,12 @@
 - name: Ode to Joy
   composer: ["Beethoven"]
   arranger: ["Kyle Landry"]
+  genre: [classical, soundtrack]
   scale:
     key: A flat
     mode: Major
+
+- name: Ode to Joy
+  composer: ["Beethoven"]
+  arranger: []
+  genre: [classical, soundtrack]
