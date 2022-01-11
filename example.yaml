@@ -1,12 +1,243 @@
-- name: Ode to Joy
-  composer: ["Beethoven"]
-  arranger: ["Kyle Landry"]
-  genre: [classical, soundtrack]
+#######################################################################
+#                                Bach                                 #
+#######################################################################
+
+- name: Fuga IV in C-sharp minor, The Well Tempered Klavier, Buch I
+  composer: [ "Johann Sebastian Bach" ]
+  genre: [ "baroque" ]
   scale:
-    key: A flat
+    key: C-sharp
+    mode: Minor
+
+- name: Preludio XXII in B-flat minor, The Well Tempered Klavier, Buch I
+  composer: [ "Johann Sebastian Bach" ]
+  genre: [ "baroque" ]
+  scale:
+    key: B-flat
+    mode: Minor
+
+- name: Fuga XVI in G minor, The Well Tempered Klavier, Buch II
+  composer: [ "Johann Sebastian Bach" ]
+  genre: [ "baroque" ]
+  scale:
+    key: G
+    mode: Minor
+
+- name: Two-Part Invention 14, in B-flat Major
+  composer: [ "Johann Sebastian Bach" ]
+  genre: [ "baroque" ]
+  scale:
+    key: B-flat
     mode: Major
 
-- name: Ode to Joy
-  composer: ["Beethoven"]
-  arranger: []
-  genre: [classical, soundtrack]
+#######################################################################
+#                               Bartok                                #
+#######################################################################
+
+- name: Stick Dance, Romanian Folk Dances, Sz. 56
+  composer: [ "Bela Bartok" ]
+  genre: [ "classical" ]
+  scale:
+    key: A
+    mode: Minor
+
+- name: Sash Dance, Romanian Folk Dances, Sz. 56
+  composer: [ "Bela Bartok" ]
+  genre: [ "classical" ]
+  scale:
+    key: D
+    mode: Minor
+
+- name: In One Spot, Romanian Folk Dances, Sz. 56
+  composer: [ "Bela Bartok" ]
+  genre: [ "classical" ]
+  scale:
+    key: B
+    mode: Minor
+
+- name: Dance from Bucsum, Romanian Folk Dances, Sz. 56
+  composer: [ "Bela Bartok" ]
+  genre: [ "classical" ]
+  scale:
+    key: A
+    mode: Major
+
+- name: Romanian Polka, Romanian Folk Dances, Sz. 56
+  composer: [ "Bela Bartok" ]
+  genre: [ "classical" ]
+  scale:
+    key: D
+    mode: Major
+
+- name: Fast Dance, Romanian Folk Dances, Sz. 56
+  composer: [ "Bela Bartok" ]
+  genre: [ "classical" ]
+  scale:
+    key: D
+    mode: Major
+
+
+#######################################################################
+#                        Ludwig van Beethoven                         #
+#######################################################################
+
+- name: The Tempest, Sonata in D minor, Opus 31 no. 2,
+  composer: [ "Ludwig van Beethoven" ]
+  genre: [ classical ]
+  scale:
+    key: D
+    mode: Minor
+
+- name: Moonlight Sonata, Sonata in C-sharp minor, Opus 27 no. 2
+  composer: [ "Ludwig van Beethoven" ]
+  genre: [ classical ]
+  scale:
+    key: C-sharp
+    mode: Minor
+
+- name: Sonata in F minor, Opus 2 no. 1
+  composer: [ "Ludwig van Beethoven" ]
+  genre: [ classical ]
+  scale:
+    key: F
+    mode: minor
+
+- name: Rondo, Opus 51 no. 1
+  composer: [ "Ludwig van Beethoven" ]
+  genre: [ classical ]
+  scale:
+    key: C
+    mode: Major
+
+- name: Für Elise, WoO 59
+  composer: [ "Ludwig van Beethoven" ]
+  genre: [ classical ]
+  scale:
+    key: A
+    mode: Minor
+
+#######################################################################
+#                               Bornlöf                               #
+#######################################################################
+
+- name: Secret Love
+  composer: [ "Johannes Bornlöf" ]
+  genre: [ "chill" ]
+  scale:
+    key: C-sharp
+    mode: Minor
+
+- name: So Others May Live
+  composer: [ "Johannes Bornlöf" ]
+  genre: [ "chill" ]
+  scale:
+    key: E
+    mode: Minor
+
+- name: The Rose and the Thorn
+  composer: [ "Johannes Bornlöf" ]
+  genre: [ "chill" ]
+  scale:
+    key: G
+    mode: Minor
+
+- name: Under my Oak Tree
+  composer: [ "Johannes Bornlöf" ]
+  genre: [ "chill" ]
+  scale:
+    key: F
+    mode: Minor
+
+#######################################################################
+#                               Brahms                                #
+#######################################################################
+
+- name: "Sonata for Piano and Violin in G major, Opus 78-1"
+  composer: [ "Brahms" ]
+  genre: [ "classical" ]
+  scale:
+    key: G
+    mode: Major
+
+#######################################################################
+#                               Chopin                                #
+#######################################################################
+
+#######################################################################
+#                               Czerny                                #
+#######################################################################
+
+#######################################################################
+#                               Debussy                               #
+#######################################################################
+
+#######################################################################
+#                               Desplat                               #
+#######################################################################
+
+#######################################################################
+#                               Djawadi                               #
+#######################################################################
+
+#######################################################################
+#                                Duval                                #
+#######################################################################
+ä
+
+#######################################################################
+#                              Hishaishi                              #
+#######################################################################
+
+#######################################################################
+#                                Liszt                                #
+#######################################################################
+
+#######################################################################
+#                             Mendelssohn                             #
+#######################################################################
+
+#######################################################################
+#                               Mozart                                #
+#######################################################################
+
+#######################################################################
+#                            Rachmaninoff                             #
+#######################################################################
+
+#######################################################################
+#                              Scarlatti                              #
+#######################################################################
+
+#######################################################################
+#                              Schubert                               #
+#######################################################################
+
+#######################################################################
+#                               Schuman                               #
+#######################################################################
+
+#######################################################################
+#                               Sinding                               #
+#######################################################################
+
+#######################################################################
+#                                Tabei                                #
+#######################################################################
+
+#######################################################################
+#                         Two Steps from Hell                         #
+#######################################################################
+
+#######################################################################
+#                            John Williams                            #
+#######################################################################
+
+#######################################################################
+#                             Hans Zimmer                             #
+#######################################################################
+
+#######################################################################
+#                          Jeremy Zuckerman                           #
+#######################################################################
+
+
