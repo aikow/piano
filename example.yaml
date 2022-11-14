@@ -5,30 +5,22 @@
 - name: Fuga IV in C-sharp minor, The Well Tempered Klavier, Buch I
   composer: [ "Johann Sebastian Bach" ]
   genre: [ "baroque" ]
-  scale:
-    key: C-sharp
-    mode: Minor
+  key: { key: C-sharp, mode: minor }
 
 - name: Preludio XXII in B-flat minor, The Well Tempered Klavier, Buch I
   composer: [ "Johann Sebastian Bach" ]
   genre: [ "baroque" ]
-  scale:
-    key: B-flat
-    mode: Minor
+  key: { key: B-flat, mode: minor }
 
 - name: Fuga XVI in G minor, The Well Tempered Klavier, Buch II
   composer: [ "Johann Sebastian Bach" ]
   genre: [ "baroque" ]
-  scale:
-    key: G
-    mode: Minor
+  key: { key: G, mode: minor }
 
-- name: Two-Part Invention 14, in B-flat Major
+- name: Two-Part Invention 14, in B-flat major
   composer: [ "Johann Sebastian Bach" ]
   genre: [ "baroque" ]
-  scale:
-    key: B-flat
-    mode: Major
+  key: { key: B-flat, mode: major }
 
 #######################################################################
 #                               Bartok                                #
@@ -37,84 +29,67 @@
 - name: Stick Dance, Romanian Folk Dances, Sz. 56
   composer: [ "Bela Bartok" ]
   genre: [ "classical" ]
-  scale:
-    key: A
-    mode: Minor
+  key: { key: A, mode: minor }
 
 - name: Sash Dance, Romanian Folk Dances, Sz. 56
   composer: [ "Bela Bartok" ]
   genre: [ "classical" ]
-  scale:
-    key: D
-    mode: Minor
+  key: { key: D, mode: minor }
 
 - name: In One Spot, Romanian Folk Dances, Sz. 56
   composer: [ "Bela Bartok" ]
   genre: [ "classical" ]
-  scale:
-    key: B
-    mode: Minor
+  key: { key: B, mode: minor }
 
 - name: Dance from Bucsum, Romanian Folk Dances, Sz. 56
   composer: [ "Bela Bartok" ]
   genre: [ "classical" ]
-  scale:
-    key: A
-    mode: Major
+  key: { key: A, mode: major }
 
 - name: Romanian Polka, Romanian Folk Dances, Sz. 56
   composer: [ "Bela Bartok" ]
   genre: [ "classical" ]
-  scale:
-    key: D
-    mode: Major
+  key: { key: D, mode: major }
 
 - name: Fast Dance, Romanian Folk Dances, Sz. 56
   composer: [ "Bela Bartok" ]
   genre: [ "classical" ]
-  scale:
-    key: D
-    mode: Major
+  key: { key: D, mode: major }
 
 
 #######################################################################
 #                        Ludwig van Beethoven                         #
 #######################################################################
 
-- name: The Tempest, Sonata in D minor, Opus 31 no. 2,
+- name: The Tempest, Sonata in D minor, Opus 31 no. 2
   composer: [ "Ludwig van Beethoven" ]
   genre: [ classical ]
-  scale:
-    key: D
-    mode: Minor
+  key: { key: D, mode: minor }
 
 - name: Moonlight Sonata, Sonata in C-sharp minor, Opus 27 no. 2
   composer: [ "Ludwig van Beethoven" ]
   genre: [ classical ]
-  scale:
-    key: C-sharp
-    mode: Minor
+  key: { key: C-sharp, mode: minor }
 
 - name: Sonata in F minor, Opus 2 no. 1
   composer: [ "Ludwig van Beethoven" ]
   genre: [ classical ]
-  scale:
-    key: F
-    mode: minor
+  key: { key: F, mode: minor }
 
 - name: Rondo, Opus 51 no. 1
   composer: [ "Ludwig van Beethoven" ]
   genre: [ classical ]
-  scale:
-    key: C
-    mode: Major
+  key: { key: C, mode: major }
 
 - name: Für Elise, WoO 59
   composer: [ "Ludwig van Beethoven" ]
   genre: [ classical ]
-  scale:
-    key: A
-    mode: Minor
+  key: { key: A, mode: minor }
+
+- name: Sechs Variationen über ein Schweizer Lied, WoO 64
+  composer: [ "Ludwig van Beethon" ]
+  genre: [ classical ]
+  key: { key: F, mode: major }
 
 #######################################################################
 #                               Bornlöf                               #
@@ -123,45 +98,50 @@
 - name: Secret Love
   composer: [ "Johannes Bornlöf" ]
   genre: [ "chill" ]
-  scale:
-    key: C-sharp
-    mode: Minor
+  key: { key: C-sharp, mode: minor }
 
 - name: So Others May Live
   composer: [ "Johannes Bornlöf" ]
   genre: [ "chill" ]
-  scale:
-    key: E
-    mode: Minor
+  key: { key: E, mode: minor }
 
 - name: The Rose and the Thorn
   composer: [ "Johannes Bornlöf" ]
   genre: [ "chill" ]
-  scale:
-    key: G
-    mode: Minor
+  key: { key: G, mode: minor }
 
 - name: Under my Oak Tree
   composer: [ "Johannes Bornlöf" ]
   genre: [ "chill" ]
-  scale:
-    key: F
-    mode: Minor
+  key: { key: F, mode: minor }
 
 #######################################################################
 #                               Brahms                                #
 #######################################################################
 
 - name: "Sonata for Piano and Violin in G major, Opus 78-1"
-  composer: [ "Brahms" ]
-  genre: [ "classical" ]
-  scale:
-    key: G
-    mode: Major
+  composer: [ "Johannes Brahms" ]
+  genre: [ "romantic" ]
+  key: { key: G, mode: major }
 
 #######################################################################
 #                               Chopin                                #
 #######################################################################
+
+- name: "Raindrops, Prelude in D flat major, Opus 28, No. 15"
+  composer: [ "Frederic Chopin" ]
+  genre: [ "romantic" ]
+  key: { key: D flat, mode: major }
+
+- name: "Prelude in E minor, Opus 28, No. 4"
+  composer: [ "Frederic Chopin" ]
+  genre: [ "romantic" ]
+  key: { key: E, mode: minor }
+
+- name: "Prelude in C minor, Opus 28, No. 20"
+  composer: [ "Frederic Chopin" ]
+  genre: [ "romantic" ]
+  key: { key: C, mode: minor }
 
 #######################################################################
 #                               Czerny                                #
@@ -182,7 +162,6 @@
 #######################################################################
 #                                Duval                                #
 #######################################################################
-ä
 
 #######################################################################
 #                              Hishaishi                              #

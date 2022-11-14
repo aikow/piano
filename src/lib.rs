@@ -1,72 +1,32 @@
-use std::error::Error;
-use std::fmt;
-use std::fmt::{Display, Formatter};
+use anyhow::{ensure, Result, bail};
+use scale::Key;
+use std::{env, str::FromStr};
 use std::fs::File;
 use std::io::BufReader;
-use std::path::Path;
-use std::str::FromStr;
+use std::path::{Path, PathBuf};
 
-use rand::distributions::Standard;
-use rand::prelude::*;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
-pub enum ScaleMode {
-    Major,
-    Minor,
-}
+pub mod cli;
+pub mod create;
+pub mod scale;
 
-impl FromStr for ScaleMode {
-    type Err = ();
+pub fn resolve_database(path: Option<String>) -> Result<PathBuf> {
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        match s {
-            "major" => Ok(ScaleMode::Major),
-            "minor" => Ok(ScaleMode::Minor),
-            _ => Err(())
-        }
-    }
-}
+    let Some(path) = path.or_else(|| env::var("PERSONAL_MUSIC_DB").ok()) else {
+        bail!("no file and no environment variable");
+    };
 
-impl Display for ScaleMode {
-    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        match *self {
-            ScaleMode::Major => write!(f, "Major"),
-            ScaleMode::Minor => write!(f, "Minor"),
-        }
-    }
-}
+    let pathbuf = PathBuf::from(path);
 
-impl Distribution<ScaleMode> for Standard {
-    fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> ScaleMode {
-        match rng.gen_range(0..2) {
-            0 => ScaleMode::Major,
-            _ => ScaleMode::Minor,
-        }
-    }
-}
-
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Scale {
-    key: String,
-    mode: ScaleMode,
-}
-
-impl Scale {
-    pub fn new(key: String, mode: ScaleMode) -> Self {
-        Self { key, mode }
+    if !pathbuf.exists() {
+        let _ = File::create(&pathbuf)?;
     }
 
-    const KEYS: [&'static str; 7] = ["A", "B", "C", "D", "E", "F", "G"];
-}
+    ensure!(pathbuf.is_file(), "file not found");
 
-impl Display for Scale {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{} {}", self.key, self.mode)
-    }
+    Ok(pathbuf)
 }
-
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Song {
@@ -74,17 +34,28 @@ pub struct Song {
     composer: Vec<String>,
     arranger: Vec<String>,
     genre: Vec<String>,
-    scale: Option<Scale>,
+    scale: Option<Key>,
 }
 
 impl Song {
-    pub fn new(name: String, composer: Vec<String>, arranger: Vec<String>, genre: Vec<String>, scale: Option<Scale>) -> Self {
-        Self { name, composer, arranger, genre, scale }
+    pub fn new(
+        name: String,
+        composer: Vec<String>,
+        arranger: Vec<String>,
+        genre: Vec<String>,
+        scale: Option<Key>,
+    ) -> Self {
+        Self {
+            name,
+            composer,
+            arranger,
+            genre,
+            scale,
+        }
     }
 }
 
-
-pub fn parse_config<P: AsRef<Path>>(path: P) -> Result<Vec<Song>, Box<dyn Error>> {
+pub fn parse_config<P: AsRef<Path>>(path: P) -> Result<Vec<Song>> {
     let file = File::open(path)?;
     let reader = BufReader::new(file);
     let deserialized_songs: Vec<Song> = serde_yaml::from_reader(reader)?;
@@ -92,21 +63,21 @@ pub fn parse_config<P: AsRef<Path>>(path: P) -> Result<Vec<Song>, Box<dyn Error>
     Ok(deserialized_songs)
 }
 
-pub fn pick_random_key() -> &'static str {
-    Scale::KEYS.choose(&mut rand::thread_rng()).unwrap()
-}
-
-pub fn pick_random_mode() -> ScaleMode {
+pub fn pick_random_tonic() -> scale::Tonic {
     rand::random()
 }
 
-pub fn pick_random_scale(mode: &Option<String>) -> Result<Scale, String> {
-    return if let Some(mode) = mode {
-        match ScaleMode::from_str(mode) {
-            Ok(mode) => { Ok(Scale::new(String::from(pick_random_key()), mode)) }
-            Err(_err) => { Err(String::from("Failed to parse mode from input string.")) }
+pub fn pick_random_mode() -> scale::Mode {
+    rand::random()
+}
+
+pub fn pick_random_key(mode: &Option<String>) -> Result<Key, String> {
+    if let Some(mode) = mode {
+        match scale::Mode::from_str(mode) {
+            Ok(mode) => Ok(Key::new(pick_random_tonic(), mode)),
+            Err(_err) => Err(String::from("Failed to parse mode from input string.")),
         }
     } else {
-        Ok(Scale::new(String::from(pick_random_key()), pick_random_mode()))
-    };
+        Ok(Key::new(pick_random_tonic(), pick_random_mode()))
+    }
 }
